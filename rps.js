@@ -48,7 +48,15 @@ function playRound(computerChoice, humanChoice) {
 	}
 }
 
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
 
-playRound(computerChoice, humanChoice);
+function playGame(numRounds) {
+	while(computerScore + humanScore < numRounds) {	
+		const computerChoice = getComputerChoice();
+		const humanChoice = getHumanChoice();
+		playRound(computerChoice, humanChoice);
+
+		console.log("Human: ", humanScore, ", computer: ", computerScore);
+	}
+}
+
+playGame(5);
